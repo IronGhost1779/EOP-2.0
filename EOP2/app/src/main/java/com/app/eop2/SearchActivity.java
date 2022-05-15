@@ -79,6 +79,10 @@ public class SearchActivity extends Activity {
         for (Producto obj : list){
             if(obj.getMostrador().toLowerCase().contains(s.toLowerCase())){
                 milista.add(obj);
+            }else if(obj.getNombre().toLowerCase().contains(s.toLowerCase())){
+                milista.add(obj);
+            }else if(obj.getPasillo().toLowerCase().contains(s.toLowerCase())){
+                milista.add(obj);
             }
 
         }
