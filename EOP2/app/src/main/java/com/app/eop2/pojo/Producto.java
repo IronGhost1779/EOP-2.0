@@ -9,10 +9,10 @@ public class Producto {
 
     }
 
-    public Producto(String nombre, String pasillo, String mostrador) {
-        Nombre = nombre;
-        Pasillo = pasillo;
-        Mostrador = mostrador;
+    public Producto(String Nombre, String Pasillo, String Mostrador) {
+        this.Nombre = Nombre;
+        this.Pasillo = Pasillo;
+        this.Mostrador = Mostrador;
     }
 
     public String getNombre() {
@@ -20,7 +20,7 @@ public class Producto {
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.Nombre = nombre;
     }
 
     public String getPasillo() {
@@ -28,7 +28,7 @@ public class Producto {
     }
 
     public void setPasillo(String pasillo) {
-        Pasillo = pasillo;
+        this.Pasillo = pasillo;
     }
 
     public String getMostrador() {
@@ -36,6 +36,6 @@ public class Producto {
     }
 
     public void setMostrador(String mostrador) {
-        Mostrador = mostrador;
+        this.Mostrador = mostrador;
     }
 }

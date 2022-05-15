@@ -36,8 +36,8 @@ public class AdapterProductos extends RecyclerView.Adapter<AdapterProductos.view
         Producto ms = productoList.get(position);
 
         holder.tv_nombre.setText((ms.getNombre()));
-        holder.tv_pasillo.setText((ms.getNombre()));
-        holder.tv_mostrador.setText((ms.getNombre()));
+        holder.tv_pasillo.setText((ms.getPasillo()));
+        holder.tv_mostrador.setText((ms.getMostrador()));
 
     }
 

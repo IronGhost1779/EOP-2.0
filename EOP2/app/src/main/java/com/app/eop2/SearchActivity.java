@@ -33,7 +33,7 @@ public class SearchActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        ref = FirebaseDatabase.getInstance().getReference().child("Producto");
+        ref = FirebaseDatabase.getInstance().getReference().child("Productos");
         rv = findViewById(R.id.rv);
         sea = findViewById(R.id.sen);
         lm = new LinearLayoutManager(this);
@@ -77,7 +77,7 @@ public class SearchActivity extends Activity {
     private void buscar(String s) {
         ArrayList<Producto> milista = new ArrayList<>();
         for (Producto obj : list){
-            if(obj.getPasillo().toLowerCase().contains(s.toLowerCase())){
+            if(obj.getMostrador().toLowerCase().contains(s.toLowerCase())){
                 milista.add(obj);
             }
 
