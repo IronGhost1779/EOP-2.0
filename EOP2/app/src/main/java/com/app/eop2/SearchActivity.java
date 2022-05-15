@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.SearchView;
 
@@ -17,14 +18,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends Activity {
 
     DatabaseReference ref;
     ArrayList<Producto> list;
     RecyclerView rv;
-    SearchView searchView;
+    SearchView sea;
     AdapterProductos adapter;
 
     LinearLayoutManager lm;
@@ -33,20 +33,19 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        ref = FirebaseDatabase.getInstance().getReference().child("Productos");
+        ref = FirebaseDatabase.getInstance().getReference().child("Producto");
         rv = findViewById(R.id.rv);
-        searchView = findViewById(R.id.search);
+        sea = findViewById(R.id.sen);
         lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
         list = new ArrayList<>();
         adapter = new AdapterProductos(list);
         rv.setAdapter(adapter);
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    for (DataSnapshot snapshot1 : snapshot.getChildren()){
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                         Producto ms = snapshot.getValue(Producto.class);
                         list.add(ms);
                     }
@@ -59,7 +58,8 @@ public class SearchActivity extends AppCompatActivity {
 
             }
         });
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+        sea.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 return false;
@@ -71,6 +71,7 @@ public class SearchActivity extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 
     private void buscar(String s) {
