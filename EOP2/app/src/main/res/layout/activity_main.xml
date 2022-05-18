@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#353333">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="379dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="510dp"
-        android:contentDescription="TODO"
-        android:src="@drawable/common_google_signin_btn_icon_dark" />
 
     <ProgressBar
         android:id="@+id/indeterminate_linear_indicator"
@@ -31,5 +21,17 @@
         android:layout_marginBottom="258dp"
         android:indeterminate="true"
         android:minHeight="24dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="379dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="510dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/captura_jpg"
+        app:srcCompat="@drawable/captura_jpg" />
 
 </RelativeLayout>
